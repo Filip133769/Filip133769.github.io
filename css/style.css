@@ -1,0 +1,83 @@
+html, body {
+    height: 100%;
+}
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: white;
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    grid-template-rows: 200px 400px 400px auto;
+    grid-template-areas: 
+    "header header header header"
+    "nav    main  main aside"
+    "footer1 footer1 footer2 footer2";
+    background-color: wheat;
+    box-sizing: border-box;
+}
+
+img{
+    max-height: 200px;
+    max-width: 100%;
+}
+
+header{
+    grid-area: header;
+    background-image: url(../img/panda-ater-bambu_medium_ww231554.jpg);
+    background-size: cover;
+    background-position: bottom;
+    color: #FFFFFF;
+    padding: 10px; 
+}
+aside{
+    grid-area: aside;
+    padding: 10px;
+}
+nav{
+    grid-area: nav;
+}
+main{
+    grid-area: main;
+}
+
+footer1{
+    grid-area: footer1;
+}
+
+footer2{
+    grid-area: footer2;
+}
+
+/*
+styling för navbar
+*/
+nav ul{
+    background-color: red;
+}
+
+/*
+media quearies
+*/
+@media screen and (max-width: 750px){
+    body{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 2fr;
+        grid-template-areas: 
+        "header header "
+        "nav main"
+        "aside footer1"
+        "footer2 footer2";
+    }
+    footer2{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 550px){
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+}
